@@ -2,13 +2,11 @@
 
 const entrada = require('prompt-sync')({ sigint: true });
 
-// nomecliente = entrada("Sr.(a), por favor digite seu nome: ");
+nomecliente = entrada("Sr.(a), por favor digite seu nome: ");
 
 
 
-
-
-//armazenar
+//variavel armazenar
 let carrinho = [];
 
 
@@ -35,20 +33,31 @@ function addProduto() {
 //while (continua === 's' || continua === 'S');
 //addProduto();
 
+function validarcontinuar() {
+    let continua = "S";
+    while (continua.toLowerCase() === "s") {
+        addProduto();
+        continua = entrada("Adicionar outro produto: (s/n): ");
+    }
+}
 
-let continua = "S";
-
-
-while (continua.toLowerCase() === "s") {
-    addProduto();
-    continua = entrada("Adicionar outro produto: (s/n): ");
+function addmais() {
+    addProduto
 }
 
 
 //addProduto();
 
-// Exibindo o conteúdo do carrinhos
+// Exibindo o conteúdo do carrinho
 //console.log(carrinho);
+
+console.log("Sr.(a), " + nomecliente + " estes são seus itens do carrinho: ")
+
+//let continua = "S";
+//while (continua.toLowerCase() === "s") {
+//    addProduto();
+//    continua = entrada("Adicionar outro produto: (s/n): ");
+
 
 carrinho.forEach((produto) => {
     console.log(`Descrição: ${produto.nome} - Preço: ${produto.preco} - Quantidade: ${produto.quantidade}`);
